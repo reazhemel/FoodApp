@@ -50,7 +50,7 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
 //    navigation
-    implementation ("androidx.navigation:navigation-fragment-ktx:2.8.1")
-    implementation ("androidx.navigation:navigation-ui-ktx:2.8.1")
+    implementation (libs.androidx.navigation.fragment.ktx)
+    implementation (libs.androidx.navigation.ui.ktx)
 
 }
