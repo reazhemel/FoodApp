@@ -5,10 +5,10 @@
         android:icon="@drawable/home"
         android:id="@+id/homeFragment"
         />
-    <item android:title="Favorite"
-        android:icon="@drawable/favorite"
-        android:id="@+id/favoriteFragment"
-        />
+<item android:title="Favorites"
+    android:icon="@drawable/favorite"
+    android:id="@+id/favoritesFragment"/>
+
     <item android:title="Categories"
         android:icon="@drawable/category"
         android:id="@+id/categoriesFragment"
