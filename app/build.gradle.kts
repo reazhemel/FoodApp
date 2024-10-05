@@ -53,4 +53,10 @@ dependencies {
     implementation (libs.androidx.navigation.fragment.ktx)
     implementation (libs.androidx.navigation.ui.ktx)
 
+    //intuit
+    implementation (libs.sdp.android)
+    implementation (libs.ssp.android)
+
+    //gif
+    implementation (libs.android.gif.drawable)
 }

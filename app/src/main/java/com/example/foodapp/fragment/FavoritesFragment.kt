@@ -7,15 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.foodapp.R
 
-class FavouritesFragment : Fragment() {
+
+class FavoritesFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_favourites, container, false)
+        return inflater.inflate(R.layout.fragment_favorites, container, false)
     }
-
-
 }
