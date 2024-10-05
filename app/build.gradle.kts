@@ -36,6 +36,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -59,4 +63,18 @@ dependencies {
 
     //gif
     implementation (libs.android.gif.drawable)
+
+//    retrofit
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+
+//    glide
+    implementation (libs.glide)
+
+    // ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    // LiveData
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
 }
