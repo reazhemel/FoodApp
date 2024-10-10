@@ -7,33 +7,33 @@ import androidx.lifecycle.ViewModel
 import com.example.foodapp.data.model.Meal
 import com.example.foodapp.data.model.MealList
 import com.example.foodapp.retrofit.RetrofitInstance
-import kotlinx.coroutines.flow.MutableStateFlow
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.Retrofit
 
-class HomeViewModel(): ViewModel() {
-    private var randomMealLiveData = MutableLiveData<Meal>()
+class MealViewModel: ViewModel() {
+    private var mealDetailsLiveData = MutableLiveData<Meal>()
 
-    fun getRandomMeal(){
-        RetrofitInstance.api.getRandomMeal().enqueue(object : Callback<MealList> {
+    fun getMealDetails(id: String){
+        RetrofitInstance.api.getMealDetails(id).enqueue(object: Callback<MealList> {
             override fun onResponse(call: Call<MealList>, response: Response<MealList>) {
-                if(response.body() !=null){
-                    val randomMeal: Meal = response.body()!!.meals[0]
-                    randomMealLiveData.value = randomMeal
-                }else{
+                if(response.body()!=null){
+                    mealDetailsLiveData.value = response.body()!!.meals[0]
+                }
+                else{
                     return
                 }
             }
 
             override fun onFailure(call: Call<MealList>, t: Throwable) {
-                Log.d("HomeFragment", t.message.toString())
+                Log.d("MealActivity", t.message.toString())
             }
 
         })
     }
 
-    fun observerRandomMealLivedata(): LiveData<Meal>{
-        return randomMealLiveData
+    fun observerMealDetailsLiveData(): LiveData<Meal>{
+        return mealDetailsLiveData
     }
 }
